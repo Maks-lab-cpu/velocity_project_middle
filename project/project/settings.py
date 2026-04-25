@@ -21,7 +21,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'django_filters',
     'corsheaders',
-    'drf_spectacular',  # --- ДОБАВЛЕНО ---
+    'drf_spectacular',
     'app',
 ]
 
@@ -71,9 +71,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 REST_FRAMEWORK = {
-    # --- ДОБАВЛЕНО: Указываем spectacular как генератор схемы ---
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
-
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
@@ -91,7 +89,6 @@ SPECTACULAR_SETTINGS = {
     'DESCRIPTION': 'API documentation for your store',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
-    # Настройка для работы JWT в Swagger UI
     'COMPONENT_SPLIT_PATCH': True,
     'COMPONENT_SPLIT_COMMAND': True,
     'SWAGGER_UI_SETTINGS': {
